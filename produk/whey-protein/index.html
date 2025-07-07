@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidowaras - Produk Nutrisi</title>
+    <link rel="stylesheet" href="/global.css" />
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+
+      body {
+        background: #f6fff8 !important;
+      }
+
+      main {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        min-height: 100vh;
+        gap: 30px;
+      }
+
+      main .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main h1 {
+        color: #395b40;
+      }
+
+      main hr {
+        width: 9rem;
+      }
+
+      main .container {
+        background: #fff;
+        box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+
+      main .container .wrapper {
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav>
+      <a href="#" class="logo">
+        <h1>SidoWaras</h1>
+      </a>
+      <ul>
+        <li><a href="../#">Beranda</a></li>
+        <li><a href="../#sidowaras">Latar Belakang</a></li>
+        <li><a href="../#nutrizi">Nutrisi</a></li>
+        <li><a href="#">Produk</a></li>
+        <li><a href="../#kalkulator">Kalkulator</a></li>
+        <li><a href="../#kontak">Kontak</a></li>
+      </ul>
+      <a id="toggleSideBar"><i class="fas fa-bars" id="toggleIcon"></i></a>
+    </nav>
+    <!-- navbar end -->
+
+    <main>
+      <div class="title-container">
+        <h1>Produk Whey Protein</h1>
+        <hr />
+      </div>
+      <section class="container">
+        <span>&lt;</span>
+        <section class="wrapper">
+          <section class="image-container">
+            <img
+              src="../../assets/creatine.jpg"
+              alt="gambar-creatine"
+              width="80px"
+            />
+            <b>Whey Protein</b>
+            <p>
+              Whey protein berguna untuk pembentukan otot secara keseluruhan
+            </p>
+          </section>
+          <section class="detail">
+            <h1>Merk 1</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              laoreet varius sollicitudin. Ut mollis neque sit amet turpis
+              facilisis porttitor. Donec sollicitudin rhoncus dapibus.
+              Pellentesque.
+            </p>
+          </section>
+        </section>
+        <span>&gt;</span>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="kontak">
+      <div class="left">
+        <h1>SidoWaras</h1>
+        <hr />
+        <div class="icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+
+      <div class="middle">
+        <div class="social title">
+          <i class="invisible fas fa-phone"></i>
+          <p><b>Hubungi Kami</b></p>
+        </div>
+        <div class="social call">
+          <i class="fas fa-phone"></i>
+          <p>+62823-3456-7890</p>
+        </div>
+        <div class="social web">
+          <i class="fas fa-globe"></i>
+          <p>http://127.0.0.1:5500/</p>
+        </div>
+        <div class="social location">
+          <i class="fas fa-location-dot"></i>
+          <p>
+            Jalan Raya Pecantingan, Sekardangan, Kec. Sidoarjo, Kab. Sidoarjo
+            Jawa Timur 61215
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <p class="right-title"><b>Lihat Juga</b></p>
+        <a href="#nutrizi">Nutrisi</a>
+        <a href="#data">Data</a>
+        <a href="#kalkulator">Kalkulator</a>
+      </div>
+    </footer>
+    <!-- footer end -->
+  </body>
+</html>
