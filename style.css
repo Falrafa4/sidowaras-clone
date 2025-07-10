@@ -402,6 +402,26 @@ main .desc-sda .detail-desc p {
   transition: 0.3s;
 }
 
+.lihat {
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  background-color: #395b40;
+  border: 1px solid #395b40;
+  padding: 0.8rem 4rem;
+  margin-top: 1.3rem;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lihat:hover {
+  background-color: transparent;
+  border: 1px solid #395b40;
+  color: #395b40;
+}
+
 .bmi .panel {
   text-align: justify;
 }
