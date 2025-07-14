@@ -110,7 +110,6 @@ document.querySelectorAll(".inputTb, .inputBb").forEach((input) => {
   });
 });
 
-
 // function untuk menghitung BMR
 function outputBmr(id) {
   // memunculkan element pada id variable id
@@ -209,7 +208,7 @@ function outputBmr(id) {
   </table>
   `;
 
-  return bmt;
+  localStorage.setItem("bmt", bmt);
 }
 
 function toSaranMenu() {
