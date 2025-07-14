@@ -1,4 +1,4 @@
-localStorage.setItem("bmt", 2608);
+// localStorage.setItem("bmt", 2608);
 const bmt = localStorage.getItem("bmt");
 console.log(bmt);
 const rentangBmt = document.getElementById("rentang-bmr");
@@ -58,7 +58,7 @@ const menuHarian = [
     rentang: 4,
     totalKalori: 2617,
     menu: {
-      pagi: ["Telur Rebus (2 butir), Susu (1 gelas), Roti (3 iris)"],
+      pagi: ["Telur Rebus (2 butir)", "Susu (1 gelas)", "Roti (3 iris)"],
       siang: ["Nasi (1 ½ gelas)", "Ayam (1 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
       malam: ["Nasi (1 ½ gelas)", "Daging Sapi (1 potong sedang)", "Kangkung (2 gelas)"],
       snack: ["Biskuit (4 buah besar)", "Susu (1 gelas)"],
@@ -89,21 +89,83 @@ const menuHarian = [
   },
 ];
 
-
-const rentang = bmtRange(bmt)[1];
+const rentang = bmtRange(bmt)[1]-1;
 const menu = menuHarian[rentang];
 
+// Kode berotak senku START
 if (menu) {
-  menuPagi.innerHTML = menu.menu.pagi;
-  menuSiang.innerHTML = menu.menu.siang;
-  menuMalam.innerHTML = menu.menu.malam;
-  menuSnack.innerHTML = menu.menu.snack;
+  for (let i = 0; i < menu.menu.pagi.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = menu.menu.pagi[i];
+    menuPagi.appendChild(li);
+  }
+
+  for (let i = 0; i < menu.menu.siang.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = menu.menu.siang[i];
+    menuSiang.appendChild(li);
+  }
+
+  for (let i = 0; i < menu.menu.malam.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = menu.menu.malam[i];
+    menuMalam.appendChild(li);
+  }
+
+  for (let i = 0; i < menu.menu.malam.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = menu.menu.malam[i];
+    menuMalam.appendChild(li);
+  }
+
+  for (let i = 0; i < menu.menu.snack.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = menu.menu.snack[i];
+    menuSnack.appendChild(li);
+  }
+
+  // menuPagi.innerHTML = menu.menu.pagi;
+  // menuSiang.innerHTML = menu.menu.siang;
+  // menuMalam.innerHTML = menu.menu.malam;
+  // menuSnack.innerHTML = menu.menu.snack;
   menuKesimpulan.innerHTML = menu.menu.kesimpulan;
 } else {
   alert("We have no idea.");
 }
+// Kode berotak senku END
 
+// GPT START
+function tampilkanMenu(waktu, elemen) {
+  const items = menu.menu[waktu];
+  
+  // Jika hanya "-" atau kosong, tampilkan sebagai 1 list item
+  if (typeof items === "string") {
+    const li = document.createElement('li');
+    li.innerHTML = items;
+    elemen.appendChild(li);
+    return;
+  }
 
+  for (let i = 0; i < items.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = items[i];
+    elemen.appendChild(li);
+  }
+}
+
+if (menu) {
+  tampilkanMenu("pagi", menuPagi);
+  tampilkanMenu("siang", menuSiang);
+  tampilkanMenu("malam", menuMalam);
+  tampilkanMenu("snack", menuSnack);
+
+  menuKesimpulan.innerHTML = menu.menu.kesimpulan;
+} else {
+  alert("We have no idea.");
+}
+// GPT END
+
+// CARA PANJANG WOII
 // if (bmtRange(bmt)[1] === 5) {
 //     menuPagi.innerHTML = `
 //     <ul>
@@ -139,3 +201,47 @@ if (menu) {
 // } else {
 //     alert('We have no idea.');
 // }
+
+switch (bmtRange(bmt)[1]) {
+  case 1:
+    menuPagi.innerHTML = `
+    <ul>
+        <li>Telur Rebus (2 butir)</li>
+        <li>Susu (1 gelas)</li>
+    </ul>`;
+
+    menuSiang.innerHTML = `
+    <ul>
+        <li>Nasi (1 ½ gelas)</li>
+        <li>Ayam (1 potong sedang)</li>
+        <li>Sawi (1 gelas)</li>
+        <li>Pisang (1 buah)</li>
+    </ul>`;
+
+    menuMalam.innerHTML = `
+    <ul>
+        <li>Nasi (1 ½ gelas)</li>
+        <li>Daging Sapi (1 potong sedang)</li>
+        <li>Kangkung (1 gelas)</li>
+    </ul>`;
+
+    menuSnack.innerHTML = `-`;
+    menuKesimpulan.innerHTML = `Menu makanan ini sudah mencukupi kandungan makronutrien yang dibutuhkan per hari. Total kalori dari menu makanan tersebut adalah 1150 kalori.`
+    break;
+
+  case 2:
+
+    break;
+
+  case 3:
+    break;
+
+  case 4:
+    break;
+
+  case 5:
+    break;
+
+  default:
+    break;
+}
