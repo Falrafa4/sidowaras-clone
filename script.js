@@ -69,7 +69,7 @@ function outputBmi(id) {
   let beratBadan = document.querySelector(".inputBb").value;
 
   if (!beratBadan || !tinggiBadan) {
-    alert("input tidak valid atau kosong, harap isi semua sesuai ketentuan");
+    alert("Input tidak valid atau kosong, harap isi semua sesuai ketentuan!");
     return;
   }
 
@@ -127,7 +127,7 @@ function outputBmr(id) {
   let pesanAktivitas;
 
   if (!beratBadan || !tinggiBadan || !usia) {
-    alert("input tidak valid, harap isi semua sesuai ketentuan");
+    alert("Input tidak valid, harap isi semua sesuai ketentuan!");
     return;
   }
   // deklarasi aktivitas
@@ -157,7 +157,7 @@ function outputBmr(id) {
   } else if (jenisKelamin == "Perempuan") {
     bmr = 655 + 9.6 * beratBadan + 1.8 * tinggiBadan - 4.7 * usia;
   } else {
-    alert("harap pilih jenis kelamin");
+    alert("Harap pilih jenis kelamin!");
     return;
   }
   bmr = bmr.toFixed(2);
@@ -208,6 +208,12 @@ function outputBmr(id) {
     </tr>
   </table>
   `;
+
+  return bmt;
+}
+
+function toSaranMenu() {
+  window.open('/saran-makanan', '_blank');
 }
 
 inputBmr = document.querySelector(".bmrInputContainer .input");
