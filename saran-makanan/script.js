@@ -93,45 +93,45 @@ const rentang = bmtRange(bmt)[1]-1;
 const menu = menuHarian[rentang];
 
 // Kode berotak senku START
-if (menu) {
-  for (let i = 0; i < menu.menu.pagi.length; i++) {
-    const li = document.createElement('li');
-    li.innerHTML = menu.menu.pagi[i];
-    menuPagi.appendChild(li);
-  }
+// if (menu) {
+//   for (let i = 0; i < menu.menu.pagi.length; i++) {
+//     const li = document.createElement('li');
+//     li.innerHTML = menu.menu.pagi[i];
+//     menuPagi.appendChild(li);
+//   }
 
-  for (let i = 0; i < menu.menu.siang.length; i++) {
-    const li = document.createElement('li');
-    li.innerHTML = menu.menu.siang[i];
-    menuSiang.appendChild(li);
-  }
+//   for (let i = 0; i < menu.menu.siang.length; i++) {
+//     const li = document.createElement('li');
+//     li.innerHTML = menu.menu.siang[i];
+//     menuSiang.appendChild(li);
+//   }
 
-  for (let i = 0; i < menu.menu.malam.length; i++) {
-    const li = document.createElement('li');
-    li.innerHTML = menu.menu.malam[i];
-    menuMalam.appendChild(li);
-  }
+//   for (let i = 0; i < menu.menu.malam.length; i++) {
+//     const li = document.createElement('li');
+//     li.innerHTML = menu.menu.malam[i];
+//     menuMalam.appendChild(li);
+//   }
 
-  for (let i = 0; i < menu.menu.malam.length; i++) {
-    const li = document.createElement('li');
-    li.innerHTML = menu.menu.malam[i];
-    menuMalam.appendChild(li);
-  }
+//   for (let i = 0; i < menu.menu.malam.length; i++) {
+//     const li = document.createElement('li');
+//     li.innerHTML = menu.menu.malam[i];
+//     menuMalam.appendChild(li);
+//   }
 
-  for (let i = 0; i < menu.menu.snack.length; i++) {
-    const li = document.createElement('li');
-    li.innerHTML = menu.menu.snack[i];
-    menuSnack.appendChild(li);
-  }
+//   for (let i = 0; i < menu.menu.snack.length; i++) {
+//     const li = document.createElement('li');
+//     li.innerHTML = menu.menu.snack[i];
+//     menuSnack.appendChild(li);
+//   }
 
-  // menuPagi.innerHTML = menu.menu.pagi;
-  // menuSiang.innerHTML = menu.menu.siang;
-  // menuMalam.innerHTML = menu.menu.malam;
-  // menuSnack.innerHTML = menu.menu.snack;
-  menuKesimpulan.innerHTML = menu.menu.kesimpulan;
-} else {
-  alert("We have no idea.");
-}
+//   // menuPagi.innerHTML = menu.menu.pagi;
+//   // menuSiang.innerHTML = menu.menu.siang;
+//   // menuMalam.innerHTML = menu.menu.malam;
+//   // menuSnack.innerHTML = menu.menu.snack;
+//   menuKesimpulan.innerHTML = menu.menu.kesimpulan;
+// } else {
+//   alert("We have no idea.");
+// }
 // Kode berotak senku END
 
 // GPT START
