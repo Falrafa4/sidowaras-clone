@@ -1,4 +1,4 @@
-localStorage.setItem("bmt", 100)
+// localStorage.setItem("bmt", 2000)
 const bmt = localStorage.getItem("bmt");
 console.log(bmt);
 const rentangBmt = document.getElementById("rentang-bmr");
@@ -7,6 +7,7 @@ const menuSiang = document.getElementById("siang");
 const menuMalam = document.getElementById("malam");
 const menuSnack = document.getElementById("snack");
 const menuKesimpulan = document.getElementById("kesimpulan");
+const boxTitle = document.querySelectorAll(".box-title");
 
 function bmtRange(bmt) {
     if (bmt === "null" || bmt === null) return ["Rentang BMR: ", 6];
@@ -131,14 +132,6 @@ const menu = menuHarian[index];
 // GPT START
 function tampilkanMenu(waktu, elemen) {
   const items = menu.menu[waktu];
-  
-  // Jika hanya "-" atau kosong, tampilkan sebagai 1 list item
-  // if (typeof items === "string") {
-  //   const li = document.createElement('li');
-  //   li.innerHTML = items;
-  //   elemen.appendChild(li);
-  //   return;
-  // }
 
   for (let i = 0; i < items.length; i++) {
     const li = document.createElement('li');
@@ -157,6 +150,8 @@ if (menu) {
 } else {
   alert("We have no idea.");
 }
+
+
 // GPT END
 
 // CARA PANJANG WOII

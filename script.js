@@ -73,6 +73,7 @@ function outputBmi(id) {
     return;
   }
 
+  let kategori;
   let m = 100;
   let tinggiBadanMeterKuadrat = (tinggiBadan / m) * (tinggiBadan / m);
   let bmi = beratBadan / tinggiBadanMeterKuadrat;
@@ -84,27 +85,41 @@ function outputBmi(id) {
     ).innerHTML = `BMI kamu: <b>${bmi}, Underweight</b> <br><br>
     Berat badan kamu masih di bawah ideal. Coba tambah porsi makan dikit dan jangan lupa olahraga yang rutin ya!
     <a href='rekomendasi/underweight/' target='_blank'>Lihat Rekomendasi Olahraga Di Sini!</a>`;
-  } else if (bmi <= 22.9 && bmi > 18.5) {
+    kategori = 'Underweight';
+  }
+  
+  else if (bmi <= 22.9 && bmi > 18.5) {
     document.querySelector(
       ".output-text"
     ).innerHTML = `BMI kamu: <b>${bmi}, Normal</b> <br><br>
     Mantap! Berat badan kamu udah ideal. Tinggal jaga pola makan dan tetap aktif aja.
     <a href='rekomendasi/normal/' target='_blank'>Lihat Rekomendasi Olahraga Di Sini!</a>`;
-  } else if (bmi <= 24.9 && bmi > 22.9) {
+    kategori = 'Normal';
+  }
+  
+  else if (bmi <= 24.9 && bmi > 22.9) {
     document.querySelector(
       ".output-text"
     ).innerHTML = `BMI kamu: <b>${bmi}, Overweight</b> <br><br>
     Berat badan kamu agak berlebih nih. Gak apa-apa, coba atur pola makan dan gerak lebih banyak pelan-pelan aja.
     <a href='rekomendasi/overweight/' target='_blank'>Lihat Rekomendasi Olahraga Di Sini!</a>`;
-  } else if (bmi > 24.9) {
+    kategori = 'Overweight';
+  }
+  
+  else if (bmi > 24.9) {
     document.querySelector(
       ".output-text"
     ).innerHTML = `BMI kamu: <b>${bmi}, Obese</b> <br><br>
     Berat badan udah masuk kategori obesitas. Nggak usah panik, mulai aja dari kurangi makan manis-manis dan tambah jalan kaki tiap hari.
     <a href='rekomendasi/obese/' target='_blank'>Lihat Rekomendasi Olahraga Di Sini!</a>`;
-  } else {
+    kategori = 'Obese';
+  }
+  
+  else {
     document.querySelector(".output-text").innerHTML = "Invalid input!";
   }
+
+  localStorage.setItem('kategori', kategori);
 }
 
 document.querySelectorAll(".inputTb, .inputBb").forEach((input) => {

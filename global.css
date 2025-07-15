@@ -6,6 +6,11 @@
 
 :root {
   --green: #395b40;
+  --light: #EBFCEB;
+}
+
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    appearance: none;
 }
 
 @keyframes coolTransition {

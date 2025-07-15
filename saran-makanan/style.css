@@ -2,6 +2,32 @@ nav {
     position: sticky;
 }
 
+main {
+    margin: 40px auto 90px auto;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--green);
+    font-family: "DM Serif Display";
+    font-weight: 500;
+}
+
+.rentang-bmr {
+    text-align: center;
+    color: var(--green);
+    margin: 25px auto;
+}
+
+.menu-makanan {
+    background-color: var(--green);
+    color: var(--light);
+    padding: 40px 60px;
+    margin: 20px 150px;
+    border-radius: 16px;
+}
+
 .day-and-night {
     display: flex;
     gap: 20px;
@@ -15,16 +41,24 @@ nav {
 }
 
 .box ul li {
-    list-style-type: none;
-    margin: 10px 0;
-    border-radius: 7px;
+    list-style-type: disc;
+    margin: 10px 25px;
     text-align: left;
-    
 }
 
 .day-and-night .vr {
     min-width: 1px;
-    max-width: 1px;
     height: auto;
-    background-color: #000;
+    background-color: var(--light);
+}
+
+.snack-and-conclusion li {
+    list-style-type: disc;
+    margin: 10px 25px;
+    border-radius: 7px;
+    text-align: left;
+}
+
+.snack-and-conclusion hr {
+    margin: 25px 0;
 }
