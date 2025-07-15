@@ -179,7 +179,7 @@ function outputBmr(id) {
     ".outputBmr"
   ).innerHTML = `<p><b>BMR</b> kamu: <b>${bmr} kkal/hari</b>. Karena aktivitasmu <b>${aktivitas}</b> (<b>${pesanAktivitas}</b>), kebutuhan kalori harianmu jadi <b>${bmt} kkal</b> — setara dengan <b>${setaraDengan} kue nastar!</b></p>
 
-  <a href="/saran-makanan" target="_blank">Lihat Saran Menu Makanan Di Sini!</a>
+  <a href="/saran-makanan" target="_blank" style="color: blue;">Lihat Saran Menu Makanan Di Sini!</a>
   
   <!--<table class="bmr-table">
     <tr>

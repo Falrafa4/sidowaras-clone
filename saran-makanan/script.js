@@ -1,4 +1,4 @@
-// localStorage.setItem("bmt", 1200)
+localStorage.setItem("bmt", 100)
 const bmt = localStorage.getItem("bmt");
 console.log(bmt);
 const rentangBmt = document.getElementById("rentang-bmr");
@@ -9,20 +9,24 @@ const menuSnack = document.getElementById("snack");
 const menuKesimpulan = document.getElementById("kesimpulan");
 
 function bmtRange(bmt) {
-    if (bmt === "null" || bmt === null) return ["Rentang BMR: ", 0];
-    if (bmt > 3500) return ["You're too fat. Get a gym membership.", 6];
-    if (bmt > 3000) return ["Rentang BMR: 3001 - 3500", 5];
-    if (bmt > 2500) return ["Rentang BMR: 2501 - 3000", 4];
-    if (bmt > 2000) return ["Rentang BMR: 2001 - 2500", 3];
-    if (bmt > 1500) return ["Rentang BMR: 1501 - 2000", 2];
-    if (bmt >= 1000) return ["Rentang BMR: 1000 - 1500", 1];
+    if (bmt === "null" || bmt === null) return ["Rentang BMR: ", 6];
+    if (bmt > 3500) return ["You're too fat. Get a gym membership.", 5];
+    if (bmt > 3000) return ["Rentang BMR: 3001 - 3500", 4];
+    if (bmt > 2500) return ["Rentang BMR: 2501 - 3000", 3];
+    if (bmt > 2000) return ["Rentang BMR: 2001 - 2500", 2];
+    if (bmt > 1500) return ["Rentang BMR: 1501 - 2000", 1];
+    if (bmt >= 1000) return ["Rentang BMR: 1000 - 1500", 0];
+    if (bmt < 1000) {
+      alert("Maaf, tidak menemukan saran menu makanan");
+      window.location.href = '../index.html';
+    } 
 }
 
 rentangBmt.innerHTML = bmtRange(bmt)[0];
 
 const menuHarian = [
   {
-    rentang: 1,
+    rentang: 1, 
     totalKalori: 1150,
     menu: {
         pagi: ["Telur Rebus (2 butir)", "Susu (1 gelas)"],
@@ -78,8 +82,9 @@ const menuHarian = [
   }
 ];
 
-const rentang = bmtRange(bmt)[1]-1;
-const menu = menuHarian[rentang];
+const index = bmtRange(bmt)[1];
+// alert(index); 
+const menu = menuHarian[index];
 
 // Kode berotak senku START
 // if (menu) {
