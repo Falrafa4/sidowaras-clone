@@ -1,4 +1,4 @@
-// localStorage.setItem("bmt", 2608);
+// localStorage.setItem("bmt", 1200)
 const bmt = localStorage.getItem("bmt");
 console.log(bmt);
 const rentangBmt = document.getElementById("rentang-bmr");
@@ -48,9 +48,9 @@ const menuHarian = [
     totalKalori: 2142,
     menu: {
       pagi: ["Telur Rebus (2 butir)", "Susu (1 gelas)", "Roti (3 iris)"],
-      siang: ["Nasi (1 ½ gelas)", "Ayam (1 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
-      malam: ["Nasi (1 ½ gelas)", "Daging Sapi (1 potong sedang)", "Kangkung (2 gelas)"],
-      snack: ["Biskuit (4 buah besar)", "Susu (1 gelas)"],
+      siang: ["Nasi (2 ¼ gelas)", "Ayam (1 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
+      malam: ["Nasi (2 ¼ gelas)", "Daging Sapi (1 potong sedang)", "Kangkung (2 gelas)", "Tempe (2 potong sedang)"],
+      snack: ["Biskuit (4 buah besar)", "Susu (1 gelas)", "Kentang (1 buah sedang)"],
       kesimpulan: `Menu makanan ini sudah mencukupi kandungan makronutrien yang dibutuhkan per hari. Total kalori dari menu makanan tersebut adalah 2142 kalori`
     }
   },
@@ -59,9 +59,9 @@ const menuHarian = [
     totalKalori: 2617,
     menu: {
       pagi: ["Telur Rebus (2 butir)", "Susu (1 gelas)", "Roti (3 iris)"],
-      siang: ["Nasi (1 ½ gelas)", "Ayam (1 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
-      malam: ["Nasi (1 ½ gelas)", "Daging Sapi (1 potong sedang)", "Kangkung (2 gelas)"],
-      snack: ["Biskuit (4 buah besar)", "Susu (1 gelas)"],
+      siang: ["Nasi (2 ¼ gelas)", "Ayam (2 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
+      malam: ["Nasi (2 ¼ gelas)", "Daging Sapi (1 potong sedang)", "Kangkung (2 gelas)", "Tempe (2 potong sedang)", "Krupuk Udang/Ikan (3 biji sedang)"],
+      snack: ["Biskuit (4 buah besar)", "Kentang (1 buah sedang)", "Minyak Sawit (4 sendok teh)"],
       kesimpulan: `Menu makanan ini sudah mencukupi kandungan makronutrien yang dibutuhkan per hari. Total kalori dari menu makanan tersebut adalah 2617 kalori`
     }
   },
@@ -70,23 +70,12 @@ const menuHarian = [
     totalKalori: 3142,
     menu: {
       pagi: ["Telur Rebus (2 butir)", "Susu (1 gelas)", "Roti (3 iris)"],
-      siang: ["Nasi (1 ½ gelas)", "Ayam (1 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
-      malam: ["Nasi (1 ½ gelas)", "Daging Sapi (1 potong sedang)", "Kangkung (2 gelas)"],
-      snack: ["Biskuit (4 buah besar)", "Susu (1 gelas)"],
+      siang: ["Nasi (2 ¼ gelas)", "Ayam (2 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
+      malam: ["Nasi (2 ¼ gelas)", "Daging Sapi (2 potong sedang)", "Kangkung (2 gelas)", "Tempe (2 potong sedang)", "Krupuk Udang/Ikan (6 biji sedang)"],
+      snack: ["Biskuit (4 buah besar)", "Kentang (1 buah sedang)", "Minyak Sawit (6 sendok teh)", "Jagung (3 buah besar)"],
       kesimpulan: `Menu makanan ini sudah mencukupi kandungan makronutrien yang dibutuhkan per hari. Total kalori dari menu makanan tersebut adalah 3142 kalori`
     }
-  },
-  {
-    rentang: 6,
-    totalKalori: 1625,
-    menu: {
-      pagi: ["Telur Rebus (2 butir)", "Susu (1 gelas)", "Roti (3 iris)"],
-      siang: ["Nasi (1 ½ gelas)", "Ayam (1 potong sedang)", "Sawi (2 gelas)", "Pisang (2 buah)"],
-      malam: ["Nasi (1 ½ gelas)", "Daging Sapi (1 potong sedang)", "Kangkung (2 gelas)"],
-      snack: ["Biskuit (4 buah besar)", "Susu (1 gelas)"],
-      kesimpulan: `Menu makanan ini sudah mencukupi kandungan makronutrien yang dibutuhkan per hari. Total kalori dari menu makanan tersebut adalah  kalori`
-    }
-  },
+  }
 ];
 
 const rentang = bmtRange(bmt)[1]-1;
@@ -139,12 +128,12 @@ function tampilkanMenu(waktu, elemen) {
   const items = menu.menu[waktu];
   
   // Jika hanya "-" atau kosong, tampilkan sebagai 1 list item
-  if (typeof items === "string") {
-    const li = document.createElement('li');
-    li.innerHTML = items;
-    elemen.appendChild(li);
-    return;
-  }
+  // if (typeof items === "string") {
+  //   const li = document.createElement('li');
+  //   li.innerHTML = items;
+  //   elemen.appendChild(li);
+  //   return;
+  // }
 
   for (let i = 0; i < items.length; i++) {
     const li = document.createElement('li');
@@ -202,46 +191,3 @@ if (menu) {
 //     alert('We have no idea.');
 // }
 
-switch (bmtRange(bmt)[1]) {
-  case 1:
-    menuPagi.innerHTML = `
-    <ul>
-        <li>Telur Rebus (2 butir)</li>
-        <li>Susu (1 gelas)</li>
-    </ul>`;
-
-    menuSiang.innerHTML = `
-    <ul>
-        <li>Nasi (1 ½ gelas)</li>
-        <li>Ayam (1 potong sedang)</li>
-        <li>Sawi (1 gelas)</li>
-        <li>Pisang (1 buah)</li>
-    </ul>`;
-
-    menuMalam.innerHTML = `
-    <ul>
-        <li>Nasi (1 ½ gelas)</li>
-        <li>Daging Sapi (1 potong sedang)</li>
-        <li>Kangkung (1 gelas)</li>
-    </ul>`;
-
-    menuSnack.innerHTML = `-`;
-    menuKesimpulan.innerHTML = `Menu makanan ini sudah mencukupi kandungan makronutrien yang dibutuhkan per hari. Total kalori dari menu makanan tersebut adalah 1150 kalori.`
-    break;
-
-  case 2:
-
-    break;
-
-  case 3:
-    break;
-
-  case 4:
-    break;
-
-  case 5:
-    break;
-
-  default:
-    break;
-}
